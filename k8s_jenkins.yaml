@@ -32,7 +32,7 @@ metadata:
 spec:
   ports:
     - port: 80
-      targetPort: 8080
+      targetPort: 5050
       nodePort: 32256
   selector:
     app: jenkins
@@ -48,6 +48,9 @@ metadata:
 spec:
   strategy:
     type: Recreate
+  selector:
+    matchLabels:
+      app: jenkins  
   template:
     metadata:
       labels:
