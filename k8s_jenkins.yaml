@@ -32,7 +32,7 @@ metadata:
 spec:
   ports:
     - port: 80
-      targetPort: 4040
+      targetPort: 5050
       nodePort: 32256
   selector:
     app: jenkins
@@ -63,7 +63,7 @@ spec:
         securityContext:
           privileged: true
         ports:
-        - containerPort: 4040
+        - containerPort: 8080
           name: jenkins
         volumeMounts:
         - name: jenkins-persistent-storage
